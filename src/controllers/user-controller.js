@@ -7,14 +7,6 @@ async function signIn(req, res, next) {
   try {
     const response = await db.User.findOne({ email: email });
 
-    /*  if (!response) {
-      return res.status(400).send(
-        generateResponse({
-          error: response.error,
-        }),
-      );
-    } */
-
     if (response) {
       return res.status(200).send(
         generateResponse({
